@@ -12,4 +12,4 @@ WORKDIR /usr/src/
 RUN make
 
 # Run the program output from the previous step
-CMD ["./lru_cpp"]
+CMD ["./target/lru_cpp"]
