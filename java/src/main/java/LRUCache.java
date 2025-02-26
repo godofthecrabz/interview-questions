@@ -10,28 +10,35 @@ public class LRUCache {
     // store references of key in cache
     private static HashSet<Integer> map;
 
-    //maximum capacity of cache
+    // maximum capacity of cache
     static int csize;
 
-    LRUCache(int n)
-    {
-        dq=new LinkedList<>();
-        map=new HashSet<>();
-        csize=n;
+    LRUCache(int n) {
+        dq = new LinkedList<>();
+        map = new HashSet<>();
+        csize = n;
     }
 
-    void refer(int x)
-    {
+    void refer(int x) {
         // not present in cache
-
-        // present in cache
+        if (!map.contains(x)) {
+            // cache is full
+            if (dq.size() == csize) {
+                // delete least recently used element
+                int last = dq.removeLast();
+                map.remove(last);
+            }
+        } else { // present in cache
+            dq.remove(x);
+        }
 
         // update reference
+        dq.push(x);
+        map.add(x);
     }
 
     // display contents of cache
-    private void display()
-    {
+    private void display() {
         for (Integer integer : dq) {
             System.out.print(integer + " ");
         }
@@ -39,7 +46,7 @@ public class LRUCache {
     }
 
     public static void main(String[] args) {
-        LRUCache ca=new LRUCache(4);
+        LRUCache ca = new LRUCache(4);
         ca.refer(1);
         ca.refer(2);
         ca.refer(3);

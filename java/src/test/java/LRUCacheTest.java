@@ -3,7 +3,6 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
 public class LRUCacheTest {
 
     @Test
@@ -14,6 +13,7 @@ public class LRUCacheTest {
         assertEquals(c.csize, 5);
     }
 
+    @Test
     @DisplayName("Test LRU last insert is head")
     void testLRULastInsertIsHead() {
         LRUCache c = new LRUCache(4);

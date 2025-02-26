@@ -38,10 +38,12 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>${maven.jar.verison}</version>
 				<configuration>
-					<manifest>
-						<addClasspath>true</addClasspath>
-						<mainClass>com.pedro.LRUCache</mainClass>
-					</manifest>
+					<archive>
+                        <manifest>
+						    <addClasspath>true</addClasspath>
+                            <mainClass>LRUCache</mainClass>
+					    </manifest>
+                    </archive>
 				</configuration>
             </plugin>
         </plugins>
