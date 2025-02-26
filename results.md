@@ -285,18 +285,12 @@ class LRUCache:
 
 - C++ Docker Run Output
 
-```
 ![c++-output](c++container-output.png)
-```
 
 - Java Docker Run Output
 
-```
 ![java-output](java-container-output.png)
-```
 
 - Python Docker Run Output
 
-```
 ![python-output](python-container-output.png)
-```
